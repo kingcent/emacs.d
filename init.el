@@ -1,6 +1,7 @@
 ;; -*- coding: utf-8 -*-
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
+(setq default-directory "E:/")
 
 ;;----------------------------------------------------------------------------
 ;; Which functionality to enable (use t or nil for true and false)
@@ -135,6 +136,23 @@
 (color-theme-molokai)
 ;; misc has some crucial tools I need immediately
 (require 'init-misc)
+
+;;===kingcent adding begin===
+;-ÉèÖÃÐÐºÅ
+(require 'linum)
+(setq linum-format "%3d ")
+;¶ÔËùÓÐÎÄ¼þÉúÐ§
+(add-hook 'find-file-hooks (lambda () (linum-mode 1)))
+
+;-ºº×Ö
+;(setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Zen Hei" . 1.2)))
+;(set-face-attribute 'default nil :font "Monaco 8") 
+(set-face-attribute 'default nil :font "-outline-consolas-normal-r-normal-normal-14-97-96-96-c-*-iso8859-1") 
+(dolist (character '(han kana symbol cjk-misc bopomofo)) 
+(set-fontset-font (frame-parameter nil 'font) 
+character 
+(font-spec :family "Microsoft YaHei" :size 13))) 
+;;===kingcent adding end===
 
 (setq idle-require-idle-delay 3)
 (setq idle-require-symbols '(init-lisp
