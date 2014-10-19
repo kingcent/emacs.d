@@ -1,7 +1,7 @@
 ;; -*- coding: utf-8 -*-
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
-(setq default-directory "E:/")
+;(setq default-directory "E:/")
 
 ;;----------------------------------------------------------------------------
 ;; Which functionality to enable (use t or nil for true and false)
@@ -156,6 +156,17 @@ character
 (font-spec :family "Microsoft YaHei" :size 13))) 
 
 (require 'init-gtd11)
+;(require 'drkm_fav)
+
+(defun switch-to-minibuffer-window ()
+  "switch to minibuffer window (if active)"
+  (interactive)
+  (when (active-minibuffer-window)
+    (select-window (active-minibuffer-window))))
+;(global-set-key (kbd "<f7>") 'switch-to-minibuffer-window)
+(global-set-key "\C-co" 'switch-to-minibuffer-window) ;; Bind to `C-c o'
+
+
 ;;==========kingcent adding end============
 
 (setq idle-require-idle-delay 3)
