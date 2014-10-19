@@ -44,4 +44,5 @@
           (concat GTD_PATH "project.org")
     )
 )
+(provide 'init-gtd11)
 ;;---for org gtd end---
